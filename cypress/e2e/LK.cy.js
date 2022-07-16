@@ -7,6 +7,7 @@ describe('empty spec', () => {
     cy.get('[data-cy="password"]').type(data.pass)
     cy.get('[data-cy="loginButton"]').click();
     cy.get('.user-roles > :nth-child(1)').click();
+
   })
 })
-// test Michal
+// test Michal1
