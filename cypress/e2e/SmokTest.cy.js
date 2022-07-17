@@ -27,7 +27,7 @@ describe('sprawdzenie dziennika', () => {
     cy.get(':nth-child(2) > .navigation-cell > .navigation-cell-text').click();
 
   })
-})
+
 describe('sprawdzenie obecnosci', () => {
   beforeEach(()=>{
     cy.viewport(1920, 1080) 
@@ -36,7 +36,7 @@ describe('sprawdzenie obecnosci', () => {
     cy.get('#datepicker-button').click();
     cy.get('#calendar-cell-22').click();
     cy.get('#datepicker-submit').click();
-    cy.wait(5000)
+    cy.wait(2000)
     cy.get('.list-content>div>span>div').find("#checkbox-default").each((elem)=>{
     console.log('dsds',elem)
     elem.trigger('click')
@@ -52,7 +52,7 @@ describe('sprawdzenie obecnosci', () => {
   
   it("Kalendarzowy open",() => {
     cy.get(':nth-child(3) > .navigation-cell').click();
-    cy.wait(1000)
+    cy.wait(2000)
     })
   })
   describe('Ogłoszenia', () => {
@@ -61,7 +61,7 @@ describe('sprawdzenie obecnosci', () => {
     })
   it("Ogłoszenia open",() => {
     cy.get(':nth-child(4) > .navigation-cell').click();
-    cy.wait(1000)
+    cy.wait(2000)
     })
   })
   describe('Plan Zajęć', () => {
@@ -126,5 +126,97 @@ describe('sprawdzenie obecnosci', () => {
     cy.get(':nth-child(11) > .navigation-cell').click();
     cy.wait(1000)
     })
+    
+  }) 
+})
+  describe('Wiadomosci', () => {
+    beforeEach(()=>{
+      cy.viewport(1920, 1080) 
+    })
+  it("Wiadomosci open",() => {
+    cy.get('[href="/school/chat"] > .material-icons').click();
+    cy.wait(2000)
+    })
+    
   }) 
 
+  describe('Rozliczenia', () => {
+    beforeEach(()=>{
+      cy.viewport(1920, 1080) 
+    })
+  it("Rozliczenia open",() => {
+    cy.get('[href="/school/payments"] > .material-icons').click();
+    
+    })
+    // describe('Raporty', () => {
+    //   beforeEach(()=>{
+    //     cy.viewport(1920, 1080)
+    //     cy.wait(2000) 
+    //   })
+    // it("Raporty open",() => {
+    //   cy.get(':nth-child(2) > .navigation-cell').click();
+    //   cy.wait(5000)
+    //   })
+      
+    // }) 
+    describe('Wpłaty', () => {
+      beforeEach(()=>{
+        cy.viewport(1920, 1080) 
+      })
+    it("Wpłaty open",() => {
+      cy.get(':nth-child(3) > .navigation-cell').click();
+      cy.wait(2000)
+      })
+      
+    }) 
+    // describe('Faktury VAT', () => {
+    //   beforeEach(()=>{
+    //     cy.viewport(1920, 1080) 
+    //   })
+    // it("Faktury VAT open",() => {
+    //   cy.get(':nth-child(4) > .navigation-cell').click();
+    //   cy.wait(2000)
+    //   })
+      
+    // }) 
+  //   describe('Rachunki', () => {
+  //     beforeEach(()=>{
+  //       cy.viewport(1920, 1080) 
+  //     })
+  //   it("Rachunki open",() => {
+  //     cy.get(':nth-child(1) > .navigation-cell').click();
+  //     cy.wait(2000)
+  //     })
+      
+  //    }) 
+    
+  // }) 
+  // describe('Personel', () => {
+  //   beforeEach(()=>{
+  //     cy.viewport(1920, 1080) 
+  //   })
+  // it("Personel open",() => {
+  //   cy.get('[href="/school/employee"] > .material-icons',{ force: true }).click();
+  //   cy.wait(4000)
+    
+  //   })
+  //   describe('Rejestr', () => {
+  //     beforeEach(()=>{
+  //       cy.viewport(1920, 1080) 
+  //     })
+  //   it("Rejestr open",() => {
+  //     cy.get(':nth-child(2) > .navigation-cell > .header-icon > .material-icons').click();
+  //     cy.wait(2000)
+  //     })
+  //   })
+  //   describe('Zadania personelu', () => {
+  //     beforeEach(()=>{
+  //       cy.viewport(1920, 1080) 
+  //     })
+  //   it("Zadania personelu open",() => {
+  //     cy.get(':nth-child(3) > .navigation-cell > .header-icon > .material-icons').click();
+  //     cy.wait(2000)
+  //     })
+  //   })
+   }) 
+  
