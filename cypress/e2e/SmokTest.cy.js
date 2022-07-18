@@ -40,6 +40,7 @@ describe('sprawdzenie obecnosci', () => {
     cy.get('.list-content>div>span>div').find("#checkbox-default").each((elem)=>{
     console.log('dsds',elem)
     elem.trigger('click')
+
     })
     cy.get(':nth-child(1) > .regular-list-actions > .more-icon > .material-icons').click();
     
@@ -146,7 +147,7 @@ describe('sprawdzenie obecnosci', () => {
     })
   it("Rozliczenia open",() => {
     cy.get('[href="/school/payments"] > .material-icons').click();
-    
+    cy.wait(2000)
     })
     // describe('Raporty', () => {
     //   beforeEach(()=>{
@@ -158,7 +159,7 @@ describe('sprawdzenie obecnosci', () => {
     //   cy.wait(5000)
     //   })
       
-    // }) 
+    }) 
     describe('Wpłaty', () => {
       beforeEach(()=>{
         cy.viewport(1920, 1080) 
@@ -167,7 +168,6 @@ describe('sprawdzenie obecnosci', () => {
       cy.get(':nth-child(3) > .navigation-cell').click();
       cy.wait(2000)
       })
-      
     }) 
     // describe('Faktury VAT', () => {
     //   beforeEach(()=>{
@@ -177,7 +177,6 @@ describe('sprawdzenie obecnosci', () => {
     //   cy.get(':nth-child(4) > .navigation-cell').click();
     //   cy.wait(2000)
     //   })
-      
     // }) 
   //   describe('Rachunki', () => {
   //     beforeEach(()=>{
@@ -186,10 +185,8 @@ describe('sprawdzenie obecnosci', () => {
   //   it("Rachunki open",() => {
   //     cy.get(':nth-child(1) > .navigation-cell').click();
   //     cy.wait(2000)
-  //     })
-      
-  //    }) 
-    
+  //     })  
+  //    })  
   // }) 
   // describe('Personel', () => {
   //   beforeEach(()=>{
@@ -198,7 +195,6 @@ describe('sprawdzenie obecnosci', () => {
   // it("Personel open",() => {
   //   cy.get('[href="/school/employee"] > .material-icons',{ force: true }).click();
   //   cy.wait(4000)
-    
   //   })
   //   describe('Rejestr', () => {
   //     beforeEach(()=>{
@@ -218,5 +214,78 @@ describe('sprawdzenie obecnosci', () => {
   //     cy.wait(2000)
   //     })
   //   })
-   }) 
-  
+  // nowy kod niepewny
+  //  }) 
+  describe('E-zajęcia', () => {
+    beforeEach(()=>{
+      cy.viewport(1920, 1080) 
+    })
+  it("E-zajecia open",() => {
+    cy.get('[href="/school/elearning"] > .material-icons').click();
+    cy.wait(2000)
+    })
+    describe('Na Zywo', () => {
+      beforeEach(()=>{
+        cy.viewport(1920, 1080) 
+      })
+    it("Na Zywo open",() => {
+      cy.get(':nth-child(2) > .navigation-cell').click();
+      cy.wait(2000)
+      })
+    }) 
+    describe('Katalog E-zajec', () => {
+      beforeEach(()=>{
+        cy.viewport(1920, 1080) 
+      })
+    it("katalog E-zajec open",() => {
+      cy.get(':nth-child(1) > .navigation-cell').click();
+      cy.wait(2000)
+      })
+    }) 
+  }) 
+  describe('Szablony', () => {
+    beforeEach(()=>{
+      cy.viewport(1920, 1080) 
+    })
+  it("Szablony open",() => {
+    cy.get('[href="/school/templates"] > .material-icons').click();
+    cy.wait(1000)
+    })
+    describe('Powiadomienia', () => {
+      beforeEach(()=>{
+        cy.viewport(1920, 1080) 
+      })
+    it("Powiadomienia open",() => {
+      cy.get(':nth-child(2) > .navigation-cell').click();
+      cy.wait(1000)
+      })
+    }) 
+    describe('Platnosci', () => {
+      beforeEach(()=>{
+        cy.viewport(1920, 1080) 
+      })
+    it("Platnosci open",() => {
+      cy.get(':nth-child(3) > .navigation-cell').click();
+      cy.wait(1000)
+      })
+    })
+    describe('Posilki', () => {
+      beforeEach(()=>{
+        cy.viewport(1920, 1080) 
+      })
+    it("Platnosci Posilki",() => {
+      cy.get(':nth-child(4) > .navigation-cell').click();
+      cy.wait(1000)
+      })
+    }) 
+    describe('Wiadomosci', () => {
+      beforeEach(()=>{
+        cy.viewport(1920, 1080) 
+      })
+    it("Wiadomosci Posilki",() => {
+      cy.get(':nth-child(1) > .navigation-cell').click();
+      cy.wait(1000)
+      })
+    }) 
+  }) 
+

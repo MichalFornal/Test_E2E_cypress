@@ -27,56 +27,100 @@ describe('sprawdzenie dziennika', () => {
     cy.get(':nth-child(2) > .navigation-cell > .navigation-cell-text').click();
 
   })
-
-describe('Rozliczenia', () => {
+  describe('Szablony', () => {
     beforeEach(()=>{
       cy.viewport(1920, 1080) 
     })
-  it("Rozliczenia open",() => {
-    cy.get('[href="/school/payments"] > .material-icons').click();
-    cy.wait(1000)
+  it("Szablony open",() => {
+    cy.get('[href="/school/templates"] > .material-icons').click();
+    cy.wait(2000)
     })
-    describe('Raporty', () => {
+    describe('Powiadomienia', () => {
       beforeEach(()=>{
         cy.viewport(1920, 1080) 
       })
-    it("Raporty open",() => {
+    it("Powiadomienia open",() => {
       cy.get(':nth-child(2) > .navigation-cell').click();
       cy.wait(2000)
       })
-      
     }) 
-    describe('Wpłaty', () => {
+    describe('Platnosci', () => {
       beforeEach(()=>{
         cy.viewport(1920, 1080) 
       })
-    it("Wpłaty open",() => {
+    it("Platnosci open",() => {
       cy.get(':nth-child(3) > .navigation-cell').click();
       cy.wait(2000)
       })
-      
-    }) 
-    describe('Faktury VAT', () => {
+    })
+    describe('Posilki', () => {
       beforeEach(()=>{
         cy.viewport(1920, 1080) 
       })
-    it("Faktury VAT open",() => {
+    it("Platnosci Posilki",() => {
       cy.get(':nth-child(4) > .navigation-cell').click();
       cy.wait(2000)
       })
-      
     }) 
-    describe('Rachunki', () => {
+    describe('Wiadomosci', () => {
       beforeEach(()=>{
         cy.viewport(1920, 1080) 
       })
-    it("Rachunki open",() => {
+    it("Wiadomosci Posilki",() => {
       cy.get(':nth-child(1) > .navigation-cell').click();
       cy.wait(2000)
       })
-      
     }) 
-    
   }) 
+// describe('Rozliczenia', () => {
+//     beforeEach(()=>{
+//       cy.viewport(1920, 1080) 
+//     })
+//   it("Rozliczenia open",() => {
+//     cy.get('[href="/school/payments"] > .material-icons').click();
+//     cy.wait(1000)
+//     })
+//     describe('Raporty', () => {
+//       beforeEach(()=>{
+//         cy.viewport(1920, 1080) 
+//       })
+//     it("Raporty open",() => {
+//       cy.get(':nth-child(2) > .navigation-cell').click();
+//       cy.wait(2000)
+//       })
+      
+//     }) 
+//     describe('Wpłaty', () => {
+//       beforeEach(()=>{
+//         cy.viewport(1920, 1080) 
+//       })
+//     it("Wpłaty open",() => {
+//       cy.get(':nth-child(3) > .navigation-cell').click();
+//       cy.wait(2000)
+//       })
+      
+//     }) 
+//     describe('Faktury VAT', () => {
+//       beforeEach(()=>{
+//         cy.viewport(1920, 1080) 
+//       })
+//     it("Faktury VAT open",() => {
+//       cy.get(':nth-child(4) > .navigation-cell').click();
+//       cy.wait(2000)
+//       })
+      
+//     }) 
+//     describe('Rachunki', () => {
+//       beforeEach(()=>{
+//         cy.viewport(1920, 1080) 
+//       })
+//     it("Rachunki open",() => {
+//       cy.get(':nth-child(1) > .navigation-cell').click();
+//       cy.wait(2000)
+//       })
+      
+//     }) 
+    
+//   }) 
   
 }) 
