@@ -148,7 +148,7 @@ describe('sprawdzenie obecnosci', () => {
   it("Rozliczenia open",() => {
     cy.get('[href="/school/payments"] > .material-icons').click();
     cy.wait(2000)
-    })
+    
     // describe('Raporty', () => {
     //   beforeEach(()=>{
     //     cy.viewport(1920, 1080)
@@ -158,7 +158,7 @@ describe('sprawdzenie obecnosci', () => {
     //   cy.get(':nth-child(2) > .navigation-cell').click();
     //   cy.wait(5000)
     //   })
-      
+  })  
     }) 
     describe('Wpłaty', () => {
       beforeEach(()=>{
@@ -366,6 +366,33 @@ describe('sprawdzenie obecnosci', () => {
   //   it("Panel Glowny open",() => {
   //     cy.get(':nth-child(1) > .navigation-cell').click();
   //     cy.wait(2000)
+  //     })
+  //   }) 
+  // }) 
+  // describe('Konto', () => {
+  //   beforeEach(()=>{
+  //     cy.viewport(1920, 1080) 
+  //   })
+  // it("Konto open",() => {
+  //   cy.get('[href="/school/account"] > .sidebar-wrap-row-background',{force: true}).click();
+  //   cy.wait(2000)
+  //   })
+  //   describe('Płatności', () => {
+  //     beforeEach(()=>{
+  //       cy.viewport(1920, 1080) 
+  //     })
+  //   it("Płatności open",() => {
+  //     cy.get(':nth-child(2) > .navigation-cell').click();
+  //     cy.wait(1000)
+  //     })
+  //   }) 
+  //   describe('Konto', () => {
+  //     beforeEach(()=>{
+  //       cy.viewport(1920, 1080) 
+  //     })
+  //   it("Konto open",() => {
+  //     cy.get(':nth-child(1) > .navigation-cell').click();
+  //     cy.wait(1000)
   //     })
   //   }) 
   // }) 
