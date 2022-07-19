@@ -249,7 +249,7 @@ describe('sprawdzenie obecnosci', () => {
     })
   it("Szablony open",() => {
     cy.get('[href="/school/templates"] > .material-icons').click();
-    cy.wait(1000)
+    cy.wait(2000)
     })
     describe('Powiadomienia', () => {
       beforeEach(()=>{
@@ -273,9 +273,9 @@ describe('sprawdzenie obecnosci', () => {
       beforeEach(()=>{
         cy.viewport(1920, 1080) 
       })
-    it("Platnosci Posilki",() => {
+    it("Posilki open",() => {
       cy.get(':nth-child(4) > .navigation-cell').click();
-      cy.wait(1000)
+      cy.wait(2000)
       })
     }) 
     describe('Wiadomosci', () => {
@@ -284,8 +284,88 @@ describe('sprawdzenie obecnosci', () => {
       })
     it("Wiadomosci Posilki",() => {
       cy.get(':nth-child(1) > .navigation-cell').click();
-      cy.wait(1000)
+      cy.wait(2000)
       })
     }) 
   }) 
-
+  // describe('Ustawienia', () => {
+  //   beforeEach(()=>{
+  //     cy.viewport(1920, 1080) 
+  //   })
+  // it("Ustawienia open",() => {
+  //   cy.get('[href="/school/settings"] > .material-icons').click();
+  //   cy.wait(2000)
+  //   })
+  //   describe('Dzieci', () => {
+  //     beforeEach(()=>{
+  //       cy.viewport(1920, 1080) 
+  //     })
+  //   it("Dzieci open",() => {
+  //     cy.get(':nth-child(2) > .navigation-cell').click();
+  //     cy.wait(2000)
+  //     })
+  //   }) 
+  //   describe('Grupy', () => {
+  //     beforeEach(()=>{
+  //       cy.viewport(1920, 1080) 
+  //     })
+  //   it("Grupy open",() => {
+  //     cy.get(':nth-child(3) > .navigation-cell').click();
+  //     cy.wait(2000)
+  //     })
+  //   })
+  //   describe('Nauczyciele', () => {
+  //     beforeEach(()=>{
+  //       cy.viewport(1920, 1080) 
+  //     })
+  //   it("Nauczyciele open",() => {
+  //     cy.get(':nth-child(4) > .navigation-cell').click();
+  //     cy.wait(2000)
+  //     })
+  //   }) 
+  //   describe('Placówka', () => {
+  //     beforeEach(()=>{
+  //       cy.viewport(1920, 1080) 
+  //     })
+  //   it("Placówka open",() => {
+  //     cy.get(':nth-child(5) > .navigation-cell').click();
+  //     cy.wait(2000)
+  //     })
+  //   }) 
+  //   describe('Rekrutacja', () => {
+  //     beforeEach(()=>{
+  //       cy.viewport(1920, 1080) 
+  //     })
+  //   it("Rekrutacja open",() => {
+  //     cy.get(':nth-child(6) > .navigation-cell').click();
+  //     cy.wait(2000)
+  //     })
+  //   }) 
+  //   describe('Uprawnienia', () => {
+  //     beforeEach(()=>{
+  //       cy.viewport(1920, 1080) 
+  //     })
+  //   it("Uprawnienia open",() => {
+  //     cy.get(':nth-child(7) > .navigation-cell').click();
+  //     cy.wait(2000)
+  //     })
+  //   }) 
+  //   describe('Kalendarz pracy', () => {
+  //     beforeEach(()=>{
+  //       cy.viewport(1920, 1080) 
+  //     })
+  //   it("Kalendarz pracy open",() => {
+  //     cy.get(':nth-child(8) > .navigation-cell').click();
+  //     cy.wait(2000)
+  //     })
+  //   }) 
+  //   describe('Panel Glowny parcy', () => {
+  //     beforeEach(()=>{
+  //       cy.viewport(1920, 1080) 
+  //     })
+  //   it("Panel Glowny open",() => {
+  //     cy.get(':nth-child(1) > .navigation-cell').click();
+  //     cy.wait(2000)
+  //     })
+  //   }) 
+  // }) 
