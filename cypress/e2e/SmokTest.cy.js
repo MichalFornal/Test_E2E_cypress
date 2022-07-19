@@ -8,7 +8,8 @@ describe('logowanie', () => {
 
 
   it('wejdz na strone', () => {
-    cy.visit('https://rc.app.livekid.pl/')
+   // cy.visit('https://rc.app.livekid.pl/')
+    cy.visit('https://app.livekid.com/?lang=pl')
   })
   it('wpisz login', () => {
     cy.get('[data-cy="login"]').type(data.user)
@@ -33,10 +34,11 @@ describe('sprawdzenie obecnosci', () => {
     cy.viewport(1920, 1080) 
   })
   it("change data",() => {
-    cy.get('#datepicker-button').click();
-    cy.get('#calendar-cell-22').click();
-    cy.get('#datepicker-submit').click();
-    cy.wait(2000)
+    // pierwsze 3 linijki zakomentuj jesli chcesz miec dzisiejszy dzien w dzienniku
+    // cy.get('#datepicker-button').click();
+    // cy.get('#calendar-cell-22').click();
+    // cy.get('#datepicker-submit').click();
+    // cy.wait(2000)
     cy.get('.list-content>div>span>div').find("#checkbox-default").each((elem)=>{
     console.log('dsds',elem)
     elem.trigger('click')
