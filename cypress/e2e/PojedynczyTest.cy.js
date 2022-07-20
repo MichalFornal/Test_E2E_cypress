@@ -24,24 +24,48 @@ describe('sprawdzenie dziennika', () => {
   })
   it("Przeklikaj caly dziennik",() => {
     cy.get('[data-cy="loginButton"]').click();
-    cy.get('.user-roles > :nth-child(1)').click();
-    cy.get(':nth-child(2) > .navigation-cell > .navigation-cell-text').click();
 
-  })
+
+   })
 
   //  Informacja medyczna kiedy bedzie done mozna dodac 
   describe('Informacja medyczna', () => {
     beforeEach(()=>{
       cy.viewport(1920, 1080) 
     })
-  it("Informacja medyczna",() => {
-    cy.get(':nth-child(12) > .navigation-cell').click();
-    cy.wait(1000)
-    cy.reload()
-    cy.wait(2000)
-    })
-    
-  // }) 
+  it("Wejdz do dziecka",() => {
+     cy.get(':nth-child(12) > .navigation-cell').click();
+     cy.get(':nth-child(1) > .regular-list-row > :nth-child(1)').click();
+     cy.wait(1000)
+  })
+  //trzeba dodac selektor 
+    //  it("dodaj pomiar",() => {
+  //   cy.get('[style="position: relative; margin-bottom: 1rem;"] > .add-button > .list-action').click();
+  //   cy.get(':nth-child(3) > .row-input > .section-selector > input').type('20')
+  //   cy.get(':nth-child(4) > .row-input > .section-selector > input').type('123')
+    //cy.get('.selector-container') 
+    // cy.get('textarea').type('123 Uwagi ąźąółka')
+    // cy.get('#submit').click();
+    // cy.wait(3000)
+    // })
+
+
+
+//działa
+    // it("dodaj diagnoze",() => {
+    //   cy.get('[style="position: relative;"] > .add-button > .list-action').click();
+    //   cy.wait(1000)
+    //   cy.get(':nth-child(2) > .row-input > .section-selector > textarea').type('Obserwacje, wywiad, zachorowania, udzielona pomoc 123 Uwagi ąźąółka')
+    //   cy.get(':nth-child(3) > .row-input > .section-selector > textarea').type('Udzielono w sprawie informacji (komu, kiedy, w jakiej formie) 123 Uwagi ąźąółka')
+    //   cy.get('#submit').click();
+    //   cy.wait(3000)
+    //   })
+   }) 
+}) 
+
+
+
+
   // describe('Ustawienia', () => {
   //   beforeEach(()=>{
   //     cy.viewport(1920, 1080) 
@@ -174,6 +198,5 @@ describe('sprawdzenie dziennika', () => {
       
 //     }) 
     
-   }) 
+ //  }) 
   
-}) 

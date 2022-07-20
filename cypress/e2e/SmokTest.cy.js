@@ -5,7 +5,6 @@ describe('logowanie', () => {
   beforeEach(()=>{
     cy.viewport(1920, 1080) 
   })
-
   it('wejdz na strone', () => {
     cy.visit('https://rc.app.livekid.pl/')
    // cy.visit('https://app.livekid.com/?lang=pl')
@@ -26,7 +25,6 @@ describe('sprawdzenie dziennika', () => {
     cy.get('.user-roles > :nth-child(1)').click();
     cy.get(':nth-child(2) > .navigation-cell > .navigation-cell-text').click();
   })
-
 describe('sprawdzenie obecnosci', () => {
   beforeEach(()=>{
     cy.viewport(1920, 1080) 
@@ -41,7 +39,6 @@ describe('sprawdzenie obecnosci', () => {
     console.log('dsds',elem)
     elem.trigger('click')
     })
-  
   })
   it("Trzy kropki",() => {
     cy.get(':nth-child(1) > .regular-list-actions > .more-icon > .material-icons').click();
@@ -76,15 +73,11 @@ describe('sprawdzenie obecnosci', () => {
   //   cy.reload()
   //   cy.wait(2000)
   //   })
-
-
 })
-
   describe('Kalendarzowy', () => {
     beforeEach(()=>{
       cy.viewport(1920, 1080) 
     })
-  
   it("Kalendarzowy open",() => {
     cy.get(':nth-child(3) > .navigation-cell').click();
     cy.wait(2000)
@@ -152,8 +145,7 @@ describe('sprawdzenie obecnosci', () => {
     })
   it("Ankieta open",() => {
     cy.get(':nth-child(10) > .navigation-cell').click();
-    cy.wait(1000)
-    
+    cy.wait(1000) 
     })
   })
   describe('Ewaluacja', () => {
@@ -164,7 +156,6 @@ describe('sprawdzenie obecnosci', () => {
     cy.get(':nth-child(11) > .navigation-cell').click();
     cy.wait(1000)
     })
-    
   }) 
   //Informacja medyczna kiedy bedzie done mozna dodac 
   // describe('Informacja medyczna', () => {
@@ -177,8 +168,20 @@ describe('sprawdzenie obecnosci', () => {
   //   cy.reload()
   //   cy.wait(2000)
   //   })
-    
+  // it("Wejdz do dziecka",() => {
+  //   cy.get(':nth-child(12) > .navigation-cell').click();
+  //   cy.get(':nth-child(1) > .regular-list-row > :nth-child(1)').click();
+  //   cy.wait(1000)
+  //   })
   // }) 
+  //   it("dodaj diagnoze",() => {
+  //     cy.get('[style="position: relative;"] > .add-button > .list-action').click();
+  //     cy.wait(1000)
+  //     cy.get(':nth-child(2) > .row-input > .section-selector > textarea').type('Obserwacje, wywiad, zachorowania, udzielona pomoc 123 Uwagi ąźąółka')
+  //     cy.get(':nth-child(3) > .row-input > .section-selector > textarea').type('Udzielono w sprawie informacji (komu, kiedy, w jakiej formie) 123 Uwagi ąźąółka')
+  //     cy.get('#submit').click();
+  //     cy.wait(3000)
+  //     })
 })
   describe('Wiadomosci', () => {
     beforeEach(()=>{
@@ -188,9 +191,7 @@ describe('sprawdzenie obecnosci', () => {
     cy.get('[href="/school/chat"] > .material-icons').click();
     cy.wait(2000)
     })
-    
   }) 
-
   describe('Rozliczenia', () => {
     beforeEach(()=>{
       cy.viewport(1920, 1080) 
@@ -209,7 +210,6 @@ describe('sprawdzenie obecnosci', () => {
       cy.wait(2000)
       })
     })  
-    
     describe('Wpłaty', () => {
       beforeEach(()=>{
         cy.viewport(1920, 1080) 
@@ -268,7 +268,6 @@ describe('sprawdzenie obecnosci', () => {
       cy.wait(2000)
       })
     })
-  
    }) 
   describe('E-zajęcia', () => {
     beforeEach(()=>{
