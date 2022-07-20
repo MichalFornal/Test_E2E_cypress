@@ -60,18 +60,24 @@ describe('sprawdzenie obecnosci', () => {
     cy.get('#addNote').click();
     cy.wait(2000)
     })
-  // it("Posiłki",() => {
-  //   cy.get(':nth-child(3) > :nth-child(4) > .list-selector-container').click();
-  //   cy.get(':nth-child(1) > :nth-child(2) > .row-count > :nth-child(2)').click();
-  //   cy.get(':nth-child(2) > :nth-child(2) > .row-count > :nth-child(2)').click();
-  //   cy.get(':nth-child(3) > :nth-child(2) > .row-count > :nth-child(2)').click();
-  //   cy.get(':nth-child(4) > :nth-child(2) > .row-count > :nth-child(2)').click();
-  //   })
+  it("Posiłki",() => {
+    cy.get(':nth-child(10) > :nth-child(4) > .list-selector-container > .selector-display').click();
+    cy.get(':nth-child(1) > :nth-child(2) > .row-count > :nth-child(2)').click();
+    cy.get(':nth-child(2) > :nth-child(2) > .row-count > :nth-child(2)').click();
+    cy.wait(2000)
+    cy.get(':nth-child(3) > :nth-child(3) > .row-count > :nth-child(2)').click();
+    cy.wait(2000)
+    cy.reload()
+    cy.wait(2000)
+    })
   // it("Sen",() => {
   //   cy.get(':nth-child(3) > :nth-child(3) > :nth-child(1) > .input-row > .opener').click();
   //   cy.get('.hours-list > :nth-child(23))').click();
   //   cy.get(':nth-child(3) > :nth-child(3) > :nth-child(2) > .input-row > .opener', {force:true}).click();
   //   cy.get('.hours-list > :nth-child(30)').click();
+  //   cy.wait(3000)
+  //   cy.reload()
+  //   cy.wait(2000)
   //   })
 
 
@@ -182,7 +188,7 @@ describe('sprawdzenie obecnosci', () => {
   it("Rozliczenia open",() => {
     cy.get('[href="/school/payments"] > .material-icons').click();
     cy.wait(2000)
-    
+  })   
     describe('Raporty', () => {
       beforeEach(()=>{
         cy.viewport(1920, 1080)
@@ -192,8 +198,8 @@ describe('sprawdzenie obecnosci', () => {
       cy.get(':nth-child(2) > .navigation-cell').click();
       cy.wait(2000)
       })
-  })  
-    }) 
+    })  
+    
     describe('Wpłaty', () => {
       beforeEach(()=>{
         cy.viewport(1920, 1080) 
@@ -230,7 +236,7 @@ describe('sprawdzenie obecnosci', () => {
     })
   it("Personel open",() => {
     cy.get('[href="/school/employee"] > .material-icons',{ force: true }).click();
-    cy.wait(4000)
+    cy.wait(2000)
     cy.reload()
     cy.wait(2000)
     })
