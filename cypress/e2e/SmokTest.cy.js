@@ -33,7 +33,7 @@ describe('sprawdzenie obecnosci', () => {
   beforeEach(()=>{
     cy.viewport(1920, 1080) 
   })
-  it("change data",() => {
+  it("Zmien date kalendarza",() => {
     // pierwsze 3 linijki zakomentuj jesli chcesz miec dzisiejszy dzien w dzienniku
     // cy.get('#datepicker-button').click();
     // cy.get('#calendar-cell-22').click();
@@ -50,16 +50,31 @@ describe('sprawdzenie obecnosci', () => {
     cy.get(':nth-child(1) > .regular-list-actions > .more-icon > .material-icons').click();
     cy.wait(2000)
     })
-    it("Powiadomienia",() => {
-      cy.get(':nth-child(1) > :nth-child(5) > .list-selector-container > .selector-display').click();
-      cy.get('#toggleCreator').click();
-      cy.get(':nth-child(6) > :nth-child(4) > #checkbox-default').click();
-      cy.get(':nth-child(5) > :nth-child(4) > #checkbox-default').click();
-      cy.get(':nth-child(4) > :nth-child(4) > #checkbox-default').click();
-      cy.wait(1000)
-      cy.get('#addNote').click();
-      cy.wait(2000)
-      })
+  it("Powiadomienia",() => {
+    cy.get(':nth-child(1) > :nth-child(5) > .list-selector-container > .selector-display').click();
+    cy.get('#toggleCreator').click();
+    cy.get(':nth-child(6) > :nth-child(4) > #checkbox-default').click();
+    cy.get(':nth-child(5) > :nth-child(4) > #checkbox-default').click();
+    cy.get(':nth-child(4) > :nth-child(4) > #checkbox-default').click();
+    cy.wait(1000)
+    cy.get('#addNote').click();
+    cy.wait(2000)
+    })
+  // it("Posiłki",() => {
+  //   cy.get(':nth-child(3) > :nth-child(4) > .list-selector-container').click();
+  //   cy.get(':nth-child(1) > :nth-child(2) > .row-count > :nth-child(2)').click();
+  //   cy.get(':nth-child(2) > :nth-child(2) > .row-count > :nth-child(2)').click();
+  //   cy.get(':nth-child(3) > :nth-child(2) > .row-count > :nth-child(2)').click();
+  //   cy.get(':nth-child(4) > :nth-child(2) > .row-count > :nth-child(2)').click();
+  //   })
+  // it("Sen",() => {
+  //   cy.get(':nth-child(3) > :nth-child(3) > :nth-child(1) > .input-row > .opener').click();
+  //   cy.get('.hours-list > :nth-child(23))').click();
+  //   cy.get(':nth-child(3) > :nth-child(3) > :nth-child(2) > .input-row > .opener', {force:true}).click();
+  //   cy.get('.hours-list > :nth-child(30)').click();
+  //   })
+
+
 })
 
   describe('Kalendarzowy', () => {
