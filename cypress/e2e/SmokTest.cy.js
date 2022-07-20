@@ -6,7 +6,6 @@ describe('logowanie', () => {
     cy.viewport(1920, 1080) 
   })
 
-
   it('wejdz na strone', () => {
     cy.visit('https://rc.app.livekid.pl/')
    // cy.visit('https://app.livekid.com/?lang=pl')
@@ -26,7 +25,6 @@ describe('sprawdzenie dziennika', () => {
     cy.get('[data-cy="loginButton"]').click();
     cy.get('.user-roles > :nth-child(1)').click();
     cy.get(':nth-child(2) > .navigation-cell > .navigation-cell-text').click();
-
   })
 
 describe('sprawdzenie obecnosci', () => {
@@ -42,7 +40,6 @@ describe('sprawdzenie obecnosci', () => {
     cy.get('.list-content>div>span>div').find("#checkbox-default").each((elem)=>{
     console.log('dsds',elem)
     elem.trigger('click')
-
     })
   
   })
@@ -169,6 +166,19 @@ describe('sprawdzenie obecnosci', () => {
     })
     
   }) 
+  //Informacja medyczna kiedy bedzie done mozna dodac 
+  // describe('Informacja medyczna', () => {
+  //   beforeEach(()=>{
+  //     cy.viewport(1920, 1080) 
+  //   })
+  // it("Informacja medyczna",() => {
+  //   cy.get(':nth-child(12) > .navigation-cell').click();
+  //   cy.wait(1000)
+  //   cy.reload()
+  //   cy.wait(2000)
+  //   })
+    
+  // }) 
 })
   describe('Wiadomosci', () => {
     beforeEach(()=>{
