@@ -6,8 +6,12 @@ describe('logowanie', () => {
     cy.viewport(1920, 1080) 
   })
   it('wejdz na strone', () => {
-    cy.visit('https://rc.app.livekid.pl/')
-   // cy.visit('https://app.livekid.com/?lang=pl')
+  //Stage
+  cy.visit('https://stage.app.livekid.pl/') 
+  //RC
+  // cy.visit('https://rc.app.livekid.pl/')
+  //Prod
+  // cy.visit('https://app.livekid.com/?lang=pl')
   })
   it('wpisz login', () => {
     cy.get('[data-cy="login"]').type(data.user)
