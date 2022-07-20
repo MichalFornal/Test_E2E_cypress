@@ -8,8 +8,8 @@ describe('logowanie', () => {
 
 
   it('wejdz na strone', () => {
-   // cy.visit('https://rc.app.livekid.pl/')
-    cy.visit('https://app.livekid.com/?lang=pl')
+    cy.visit('https://rc.app.livekid.pl/')
+   // cy.visit('https://app.livekid.com/?lang=pl')
   })
   it('wpisz login', () => {
     cy.get('[data-cy="login"]').type(data.user)
