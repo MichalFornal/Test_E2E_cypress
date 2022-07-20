@@ -64,6 +64,7 @@ describe('sprawdzenie obecnosci', () => {
     cy.reload()
     cy.wait(2000)
     })
+  // Do poprawy pierwsza godzine ogarnie gorzej potem
   // it("Sen",() => {
   //   cy.get(':nth-child(3) > :nth-child(3) > :nth-child(1) > .input-row > .opener').click();
   //   cy.get('.hours-list > :nth-child(23))').click();
@@ -157,7 +158,7 @@ describe('sprawdzenie obecnosci', () => {
     cy.wait(1000)
     })
   }) 
-  //Informacja medyczna kiedy bedzie done mozna dodac 
+  //Informacja medyczna kiedy bedzie na RC mozna dodac 
   // describe('Informacja medyczna', () => {
   //   beforeEach(()=>{
   //     cy.viewport(1920, 1080) 
