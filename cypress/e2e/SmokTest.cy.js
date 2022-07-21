@@ -7,9 +7,9 @@ describe('logowanie', () => {
   })
   it('wejdz na strone', () => {
   //Stage
-  cy.visit('https://stage.app.livekid.pl/') 
+  //cy.visit('https://stage.app.livekid.pl/') 
   //RC
-  // cy.visit('https://rc.app.livekid.pl/')
+   cy.visit('https://rc.app.livekid.pl/')
   //Prod
   // cy.visit('https://app.livekid.com/?lang=pl')
   })
@@ -40,7 +40,6 @@ describe('sprawdzenie obecnosci', () => {
     // cy.get('#datepicker-submit').click();
     // cy.wait(2000)
     cy.get('.list-content>div>span>div').find("#checkbox-default").each((elem)=>{
-    console.log('dsds',elem)
     elem.trigger('click')
     })
   })
@@ -163,6 +162,7 @@ describe('sprawdzenie obecnosci', () => {
     })
   }) 
   //Informacja medyczna kiedy bedzie na RC mozna dodac 
+
   // describe('Informacja medyczna', () => {
   //   beforeEach(()=>{
   //     cy.viewport(1920, 1080) 
@@ -179,7 +179,7 @@ describe('sprawdzenie obecnosci', () => {
   //   cy.wait(1000)
   //   })
   // }) 
-  //   it("dodaj diagnoze",() => {
+  //   it("Dodaj Diagnoze",() => {
   //     cy.get('[style="position: relative;"] > .add-button > .list-action').click();
   //     cy.wait(1000)
   //     cy.get(':nth-child(2) > .row-input > .section-selector > textarea').type('Obserwacje, wywiad, zachorowania, udzielona pomoc 123 Uwagi ąźąółka')
@@ -435,6 +435,8 @@ describe('sprawdzenie obecnosci', () => {
       })
     }) 
   }) 
+  // Do poprawy
+
   // describe('Konto', () => {
   //   beforeEach(()=>{
   //     cy.viewport(1920, 1080) 
