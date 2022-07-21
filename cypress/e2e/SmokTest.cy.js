@@ -5,7 +5,7 @@ describe('logowanie', () => {
   beforeEach(()=>{
     cy.viewport(1920, 1080) 
   })
-  it('wejdz na strone', () => {
+  it('Home page login', () => {
   //Stage
   //cy.visit('https://stage.app.livekid.pl/') 
   //RC
