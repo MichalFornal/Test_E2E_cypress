@@ -9,6 +9,7 @@
   "author": "Michal FornalTest",
   "license": "ISC",
   "devDependencies": {
-    "cypress": "^10.3.0"
+    "cypress": "^10.3.0",
+    "cypress-file-upload": "^5.0.8"
   }
 }
