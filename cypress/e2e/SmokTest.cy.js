@@ -20,6 +20,9 @@ describe('logowanie', () => {
     cy.get('[data-cy="password"]').type(data.pass)
   })
 })
+
+
+
 describe('sprawdzenie dziennika', () => {
   beforeEach(()=>{
     cy.viewport(1920, 1080) 
@@ -29,6 +32,8 @@ describe('sprawdzenie dziennika', () => {
     cy.get('.user-roles > :nth-child(1)').click();
     cy.get(':nth-child(2) > .navigation-cell > .navigation-cell-text').click();
   })
+
+
 describe('sprawdzenie obecnosci', () => {
   beforeEach(()=>{
     cy.viewport(1920, 1080) 
@@ -78,6 +83,8 @@ describe('sprawdzenie obecnosci', () => {
   //   cy.wait(2000)
   //   })
 })
+
+
   describe('Kalendarzowy', () => {
     beforeEach(()=>{
       cy.viewport(1920, 1080) 
@@ -98,6 +105,8 @@ describe('sprawdzenie obecnosci', () => {
     cy.wait(2000)
     })
   })
+
+
   describe('Plan Zajęć', () => {
     beforeEach(()=>{
       cy.viewport(1920, 1080) 
@@ -107,6 +116,8 @@ describe('sprawdzenie obecnosci', () => {
     cy.wait(2000)
     })
   })
+
+
   describe('Galeria zdjęć', () => {
     beforeEach(()=>{
       cy.viewport(1920, 1080) 
@@ -116,6 +127,8 @@ describe('sprawdzenie obecnosci', () => {
     cy.wait(1000)
     })
   })
+
+
   describe('Jadłospis', () => {
     beforeEach(()=>{
       cy.viewport(1920, 1080) 
@@ -125,6 +138,8 @@ describe('sprawdzenie obecnosci', () => {
     cy.wait(1000)
     })
   })
+
+
   describe('Dysk', () => {
     beforeEach(()=>{
       cy.viewport(1920, 1080) 
@@ -134,6 +149,8 @@ describe('sprawdzenie obecnosci', () => {
     cy.wait(1000)
     })
   })
+
+
   describe('E-dziennik', () => {
     beforeEach(()=>{
       cy.viewport(1920, 1080) 
@@ -147,6 +164,8 @@ describe('sprawdzenie obecnosci', () => {
     beforeEach(()=>{
       cy.viewport(1920, 1080) 
     })
+
+
   it("Ankieta open",() => {
     cy.get(':nth-child(10) > .navigation-cell').click();
     cy.wait(1000) 
@@ -188,6 +207,8 @@ describe('sprawdzenie obecnosci', () => {
   //     cy.wait(3000)
   //     })
 })
+
+
   describe('Wiadomosci', () => {
     beforeEach(()=>{
       cy.viewport(1920, 1080) 
@@ -201,6 +222,8 @@ describe('sprawdzenie obecnosci', () => {
     beforeEach(()=>{
       cy.viewport(1920, 1080) 
     })
+
+
   it("Rozliczenia open",() => {
     cy.get('[href="/school/payments"] > .material-icons').click();
     cy.wait(2000)
@@ -215,6 +238,8 @@ describe('sprawdzenie obecnosci', () => {
       cy.wait(2000)
       })
     })  
+
+
     describe('Wpłaty', () => {
       beforeEach(()=>{
         cy.viewport(1920, 1080) 
@@ -235,6 +260,8 @@ describe('sprawdzenie obecnosci', () => {
       cy.wait(2000)
       })
     }) 
+
+
     describe('Rachunki', () => {
       beforeEach(()=>{
         cy.viewport(1920, 1080) 
@@ -245,6 +272,8 @@ describe('sprawdzenie obecnosci', () => {
       })  
      })  
   }) 
+
+
   describe('Personel', () => {
     beforeEach(()=>{
       cy.viewport(1920, 1080) 
@@ -264,6 +293,8 @@ describe('sprawdzenie obecnosci', () => {
       cy.wait(2000)
       })
     })
+
+
     describe('Zadania personelu', () => {
       beforeEach(()=>{
         cy.viewport(1920, 1080) 
@@ -274,6 +305,8 @@ describe('sprawdzenie obecnosci', () => {
       })
     })
    }) 
+
+
   describe('E-zajęcia', () => {
     beforeEach(()=>{
       cy.viewport(1920, 1080) 
@@ -282,6 +315,8 @@ describe('sprawdzenie obecnosci', () => {
     cy.get('[href="/school/elearning"] > .material-icons').click();
     cy.wait(2000)
     })
+
+
     describe('Na Zywo', () => {
       beforeEach(()=>{
         cy.viewport(1920, 1080) 
@@ -291,6 +326,8 @@ describe('sprawdzenie obecnosci', () => {
       cy.wait(2000)
       })
     }) 
+
+
     describe('Katalog E-zajec', () => {
       beforeEach(()=>{
         cy.viewport(1920, 1080) 
@@ -309,6 +346,8 @@ describe('sprawdzenie obecnosci', () => {
     cy.get('[href="/school/templates"] > .material-icons').click();
     cy.wait(2000)
     })
+
+
     describe('Powiadomienia', () => {
       beforeEach(()=>{
         cy.viewport(1920, 1080) 
@@ -318,6 +357,8 @@ describe('sprawdzenie obecnosci', () => {
       cy.wait(1000)
       })
     }) 
+
+
     describe('Platnosci', () => {
       beforeEach(()=>{
         cy.viewport(1920, 1080) 
@@ -327,6 +368,8 @@ describe('sprawdzenie obecnosci', () => {
       cy.wait(1000)
       })
     })
+
+
     describe('Posilki', () => {
       beforeEach(()=>{
         cy.viewport(1920, 1080) 
@@ -336,6 +379,8 @@ describe('sprawdzenie obecnosci', () => {
       cy.wait(2000)
       })
     }) 
+
+
     describe('Wiadomosci', () => {
       beforeEach(()=>{
         cy.viewport(1920, 1080) 
@@ -348,6 +393,8 @@ describe('sprawdzenie obecnosci', () => {
       })
     }) 
   }) 
+
+
   describe('Ustawienia', () => {
     beforeEach(()=>{
       cy.viewport(1920, 1080) 
@@ -358,6 +405,8 @@ describe('sprawdzenie obecnosci', () => {
     cy.reload()
     cy.wait(2000)
     })
+
+
     describe('Dzieci', () => {
       beforeEach(()=>{
         cy.viewport(1920, 1080) 
@@ -367,6 +416,8 @@ describe('sprawdzenie obecnosci', () => {
       cy.wait(2000)
       })
     }) 
+
+
     describe('Grupy', () => {
       beforeEach(()=>{
         cy.viewport(1920, 1080) 
@@ -387,6 +438,8 @@ describe('sprawdzenie obecnosci', () => {
       cy.wait(2000)
       })
     }) 
+
+
     describe('Placówka', () => {
       beforeEach(()=>{
         cy.viewport(1920, 1080) 
@@ -396,6 +449,8 @@ describe('sprawdzenie obecnosci', () => {
       cy.wait(2000)
       })
     }) 
+
+
     describe('Rekrutacja', () => {
       beforeEach(()=>{
         cy.viewport(1920, 1080) 
@@ -405,6 +460,8 @@ describe('sprawdzenie obecnosci', () => {
       cy.wait(2000)
       })
     }) 
+
+
     describe('Uprawnienia', () => {
       beforeEach(()=>{
         cy.viewport(1920, 1080) 
@@ -414,6 +471,8 @@ describe('sprawdzenie obecnosci', () => {
       cy.wait(2000)
       })
     }) 
+
+
     describe('Kalendarz pracy', () => {
       beforeEach(()=>{
         cy.viewport(1920, 1080) 
@@ -423,6 +482,8 @@ describe('sprawdzenie obecnosci', () => {
       cy.wait(2000)
       })
     }) 
+
+
     describe('Panel Glowny parcy', () => {
       beforeEach(()=>{
         cy.viewport(1920, 1080) 
@@ -435,6 +496,8 @@ describe('sprawdzenie obecnosci', () => {
       })
     }) 
   }) 
+
+  
   // Do poprawy
 
   // describe('Konto', () => {
