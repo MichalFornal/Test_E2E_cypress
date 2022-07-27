@@ -8,8 +8,8 @@ describe('logowanie', () => {
 
 
   it('wejdz na strone', () => {
-   // cy.visit('https://rc.app.livekid.pl/') 
-    cy.visit('https://stage.app.livekid.pl/') 
+    cy.visit('https://rc.app.livekid.pl/') 
+  //  cy.visit('https://stage.app.livekid.pl/') 
   })
   it('wpisz login', () => {
     cy.get('[data-cy="login"]').type(data.user)
@@ -27,17 +27,53 @@ describe('sprawdzenie dziennika', () => {
 
 
    })
-
-  //  Informacja medyczna kiedy bedzie done mozna dodac 
-  describe('Informacja medyczna', () => {
+   describe('Wiadomosci', () => {
     beforeEach(()=>{
       cy.viewport(1920, 1080) 
     })
-  it("Wejdz do dziecka",() => {
-     cy.get(':nth-child(12) > .navigation-cell').click();
-     cy.get(':nth-child(1) > .regular-list-row > :nth-child(1)').click();
-     cy.wait(1000)
-  })
+  it("Wiadomosci open",() => {
+    cy.get('[href="/school/chat"] > .material-icons').click();
+    cy.wait(2000)
+    })
+  }) 
+  describe('Rozliczenia', () => {
+    beforeEach(()=>{
+      cy.viewport(1920, 1080) 
+    })
+
+
+  it("Rozliczenia open",() => {
+    cy.get('[href="/school/payments"] > .material-icons').click();
+    cy.wait(2000)
+  })   
+    describe('Raporty', () => {
+      beforeEach(()=>{
+        cy.viewport(1920, 1080)
+        cy.wait(2000) 
+      })
+    it("Raporty open",() => {
+      cy.get(':nth-child(2) > .navigation-cell').click();
+      cy.wait(2000)
+      cy.get('#selector-groups > .section-selector > .selector-container').click();
+      cy.wait(1000)
+      cy.get('[id="checkbox-livkidowcy"]').click();
+      cy.get('[id="checkbox-Misie"]').click();
+      cy.get('#selector-groups > .section-selector > .selector-container').click();
+      cy.get('[test_id="input"]').type(data.user);
+      cy.get('#button-label').click();
+      cy.wait(2000)
+      })
+    })  
+  //  Informacja medyczna kiedy bedzie done mozna dodac 
+  // describe('Informacja medyczna', () => {
+  //   beforeEach(()=>{
+  //     cy.viewport(1920, 1080) 
+  //   })
+  // it("Wejdz do dziecka",() => {
+  //    cy.get(':nth-child(12) > .navigation-cell').click();
+  //    cy.get(':nth-child(1) > .regular-list-row > :nth-child(1)').click();
+  //    cy.wait(1000)
+  // })
   //trzeba dodac selektor 
     //  it("dodaj pomiar",() => {
   //   cy.get('[style="position: relative; margin-bottom: 1rem;"] > .add-button > .list-action').click();

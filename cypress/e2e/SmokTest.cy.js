@@ -236,7 +236,75 @@ describe('sprawdzenie obecnosci', () => {
     it("Raporty open",() => {
       cy.get(':nth-child(2) > .navigation-cell').click();
       cy.wait(2000)
+      cy.get('#selector-groups > .section-selector > .selector-container').click();
+      cy.wait(1000)
+    })
+    it("Raport Obecność",() => {
+      cy.get('[id="checkbox-livkidowcy"]').click();
+      cy.get('[id="checkbox-Misie"]').click();
+      cy.get('.feature-view-side-content').click();
+      cy.get('[test_id="input"]').type(data.email);
+      cy.get('#button-label').click();
+      cy.wait(2000)
       })
+      it("Raport Rachunki ",() => {
+        cy.get('.feature-view-side-navigation > :nth-child(2)').click();
+        cy.wait(2000)
+        })
+      it("Raporty Posiłki",() => {
+        cy.get('.feature-view-side-navigation > :nth-child(3)').click();
+        cy.wait(2000)
+        })
+      it("Raporty Zadłuenie",() => {
+        cy.get('.feature-view-side-navigation > :nth-child(4)').click();
+        cy.wait(2000)
+        })
+      it("Raporty Kontrakty",() => {
+        cy.get('.feature-view-side-navigation > :nth-child(5)').click();
+        cy.wait(2000)
+        })
+      it("Raporty Wpłaty",() => {
+        cy.get('.feature-view-side-navigation > :nth-child(6)').click();
+        cy.wait(2000)
+        })
+      it("Raporty Tematy",() => {
+        cy.get('.feature-view-side-navigation > :nth-child(7)').click();
+        cy.wait(2000)
+        })
+      it("Raporty Personel",() => {
+        cy.get('.feature-view-side-navigation > :nth-child(8)').click();
+        cy.wait(2000)
+        })
+      it("Raporty Faktury",() => {
+        cy.get('.feature-view-side-navigation > :nth-child(9)').click();
+        cy.wait(2000)
+        })
+      it("Raporty Posiłki Według Dzieci",() => {
+        cy.get('.feature-view-side-navigation > :nth-child(10)').click();
+        cy.wait(2000)
+        })
+      it("Raporty Opłaty Rodziców",() => {
+        cy.get('.feature-view-side-navigation > :nth-child(11)').click();
+        cy.wait(2000)
+        })
+      it("Raporty Empatia",() => {
+        cy.get('.feature-view-side-navigation > :nth-child(12)').click();
+        cy.wait(2000)
+        })
+      it("Raporty Kwarantanna",() => {
+        cy.get('.feature-view-side-navigation > :nth-child(13)').click();
+        cy.wait(2000)
+        })
+      it("Raporty Dotacje",() => {
+        cy.get('.feature-view-side-navigation > :nth-child(14)').click();
+        cy.wait(2000)
+        })
+      it("Raporty Osoby upowanione",() => {
+        cy.get('.feature-view-side-navigation > :nth-child(15)').click();
+        cy.wait(2000)
+        })
+      
+      
     })  
 
 
