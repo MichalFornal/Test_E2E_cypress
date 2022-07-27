@@ -236,19 +236,33 @@ describe('sprawdzenie obecnosci', () => {
     it("Raporty open",() => {
       cy.get(':nth-child(2) > .navigation-cell').click();
       cy.wait(2000)
-      cy.get('#selector-groups > .section-selector > .selector-container').click();
-      cy.wait(1000)
     })
     it("Raport Obecność",() => {
+      //obecny/nieobecny
+      cy.get('#selector-groups > .section-selector > .selector-container').click();
+      cy.wait(1000)
       cy.get('[id="checkbox-livkidowcy"]').click();
       cy.get('[id="checkbox-Misie"]').click();
       cy.get('.feature-view-side-content').click();
       cy.get('[test_id="input"]').type(data.email);
       cy.get('#button-label').click();
       cy.wait(2000)
+      //Godzinowy do sprawdzenia
+      // cy.get('.selector-container').eq(0).click();
+      // cy.get('[test_id="rowDisplay"]').eq(0).click();
+      // cy.get('.feature-view-side-content').click();
+      // cy.get('#selector-groups > .section-selector > .selector-container').click();
+      // cy.wait(1000)
+      // cy.get('[id="checkbox-livkidowcy"]').click();
+      // cy.get('[id="checkbox-Misie"]').click();
+      // cy.get('.feature-view-side-content').click();
+      // cy.get('[test_id="input"]').type(data.email);
+      // cy.get('#button-label').click();
+      // cy.wait(2000)
       })
-      it("Raport Rachunki ",() => {
+      it("Raporty Rachunki",() => {
         cy.get('.feature-view-side-navigation > :nth-child(2)').click();
+
         cy.wait(2000)
         })
       it("Raporty Posiłki",() => {
