@@ -258,7 +258,7 @@ describe('sprawdzenie obecnosci', () => {
       // cy.get('.feature-view-side-content').click();
       // cy.get('[test_id="input"]').type(data.email);
       // cy.get('#button-label').click();
-      // cy.wait(2000)
+      // cy.wait(2000);
       })
       it("Raporty Rachunki",() => {
         cy.get('.feature-view-side-navigation > :nth-child(2)').click();
