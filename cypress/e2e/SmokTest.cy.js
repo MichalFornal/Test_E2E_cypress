@@ -9,9 +9,9 @@ describe('logowanie', () => {
   //Stage
   //cy.visit('https://stage.app.livekid.pl/') 
   //RC
-   cy.visit('https://rc.app.livekid.pl/')
+  cy.visit('https://rc.app.livekid.pl/')
   //Prod
-  // cy.visit('https://app.livekid.com/?lang=pl')
+  //cy.visit('https://app.livekid.com/?lang=pl')
   })
   it('wpisz login', () => {
     cy.get('[data-cy="login"]').type(data.user)
@@ -27,9 +27,14 @@ describe('sprawdzenie dziennika', () => {
   beforeEach(()=>{
     cy.viewport(1920, 1080) 
   })
-  it("Przeklikaj caly dziennik",() => {
+  it("Zaloguj na konto",() => {
     cy.get('[data-cy="loginButton"]').click();
-    cy.get('.user-roles > :nth-child(1)').click();
+    cy.get('.user-roles > :nth-child(1)').click();   
+  })
+  it("Dziennik start catering wyslij",() => {
+    cy.get('#button-label').click();
+  })
+  it("Dziennik Dzienny",() => {
     cy.get(':nth-child(2) > .navigation-cell > .navigation-cell-text').click();
   })
 
@@ -237,8 +242,9 @@ describe('sprawdzenie obecnosci', () => {
       cy.get(':nth-child(2) > .navigation-cell').click();
       cy.wait(1000)
     })
-    it("Raport Obecność",() => {
-      //obecny/nieobecny
+    describe('Raporty Obecności', () => {
+    it("Raport Obecność obecny/niobecny",() => {
+      
       cy.get('#selector-groups > .section-selector > .selector-container').click();
       cy.wait(1000)
       cy.get('[id="checkbox-livkidowcy"]').click();
@@ -247,19 +253,23 @@ describe('sprawdzenie obecnosci', () => {
       cy.get('[test_id="input"]').type(data.email);
       cy.get('#button-label').click();
       cy.wait(1000)
-      //Godzinowy do sprawdzenia
-      // cy.get('.selector-container').eq(0).click();
-      // cy.get('[test_id="rowDisplay"]').eq(0).click();
-      // cy.get('.feature-view-side-content').click();
-      // cy.get('#selector-groups > .section-selector > .selector-container').click();
-      // cy.wait(1000)
-      // cy.get('[id="checkbox-livkidowcy"]').click();
-      // cy.get('[id="checkbox-Misie"]').click();
-      // cy.get('.feature-view-side-content').click();
-      // cy.get('[test_id="input"]').type(data.email);
-      // cy.get('#button-label').click();
-      // cy.wait(2000);
+    })
+    it("Raport Obecność Godzinowy",() => {
+      
+      cy.get('.selector-container').eq(0).click();
+      cy.get('[test_id="rowDisplay"]').eq(0).click();
+      cy.get('.feature-view-side-content').click();
+      cy.get('#selector-groups > .section-selector > .selector-container').click();
+      cy.wait(1000)
+      cy.get('[id="checkbox-livkidowcy"]').click();
+      cy.get('[id="checkbox-Misie"]').click();
+      cy.get('.feature-view-side-content').click();
+      cy.get('[test_id="input"]').type(data.email);
+      cy.get('#button-label').click();
+      cy.wait(2000);
       })
+
+    })
       it("Raporty Rachunki",() => {
         cy.get('.feature-view-side-navigation > :nth-child(2)').click();
         cy.wait(1000)
