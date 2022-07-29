@@ -27,14 +27,11 @@ describe('sprawdzenie dziennika', () => {
   beforeEach(()=>{
     cy.viewport(1920, 1080) 
   })
-  it("Zaloguj na konto",() => {
+  it("Przeklikaj caly dziennik",() => {
     cy.get('[data-cy="loginButton"]').click();
-    cy.get('.user-roles > :nth-child(1)').click();   
-  })
-  it("Dziennik start catering wyslij",() => {
-    cy.get('#button-label').click();
-  })
-  it("Dziennik Dzienny",() => {
+    cy.get('.user-roles > :nth-child(1)').click();
+    cy.wait(1000);
+    cy.get('[id="button-label"]').click();
     cy.get(':nth-child(2) > .navigation-cell > .navigation-cell-text').click();
   })
 
@@ -63,30 +60,40 @@ describe('sprawdzenie obecnosci', () => {
     cy.get(':nth-child(6) > :nth-child(4) > #checkbox-default').click();
     cy.get(':nth-child(5) > :nth-child(4) > #checkbox-default').click();
     cy.get(':nth-child(4) > :nth-child(4) > #checkbox-default').click();
-    cy.wait(1000)
     cy.get('#addNote').click();
-    cy.wait(2000)
+    cy.wait(1000);
     })
   it("Posiłki",() => {
     cy.get(':nth-child(10) > :nth-child(4) > .list-selector-container > .selector-display').click();
     cy.get(':nth-child(1) > :nth-child(2) > .row-count > :nth-child(2)').click();
     cy.get(':nth-child(2) > :nth-child(2) > .row-count > :nth-child(2)').click();
-    cy.wait(2000)
+    cy.wait(1000);
     cy.get(':nth-child(3) > :nth-child(3) > .row-count > :nth-child(2)').click();
-    cy.wait(2000)
+    cy.wait(1000);
     cy.reload()
-    cy.wait(2000)
+    cy.wait(1000);
     })
   // Do poprawy pierwsza godzine ogarnie gorzej potem
   // it("Sen",() => {
   //   cy.get(':nth-child(3) > :nth-child(3) > :nth-child(1) > .input-row > .opener').click();
   //   cy.get('.hours-list > :nth-child(23))').click();
   //   cy.get(':nth-child(3) > :nth-child(3) > :nth-child(2) > .input-row > .opener', {force:true}).click();
-  //   cy.get('.hours-list > :nth-child(30)').click();
+  //   cy.get('.hours-list > :nth-child(3)').click();
   //   cy.wait(3000)
   //   cy.reload()
   //   cy.wait(2000)
   //   })
+  it("wysli email do cateringu",() =>{
+    cy.get('[id="button-label"]').eq(1).click();
+    cy.wait(1000);
+    cy.get('[id="button-label"]').eq(2).click();
+    cy.wait(1000);
+    cy.get('.list-header > #checkbox-default').click();
+    cy.wait(1000);
+    cy.get('[id="submit"]').click();
+    cy.wait(1000);
+    cy.get('.popup-content-header > .material-icons').click();
+  })
 })
 
 
@@ -96,7 +103,7 @@ describe('sprawdzenie obecnosci', () => {
     })
   it("Kalendarzowy open",() => {
     cy.get(':nth-child(3) > .navigation-cell').click();
-    cy.wait(2000)
+    cy.wait(1000)
     })
   })
   describe('Ogłoszenia', () => {
@@ -105,9 +112,9 @@ describe('sprawdzenie obecnosci', () => {
     })
   it("Ogłoszenia open",() => {
     cy.get(':nth-child(4) > .navigation-cell').click();
-    cy.wait(2000)
+    cy.wait(1000)
     cy.reload()
-    cy.wait(2000)
+    cy.wait(1000)
     })
   })
 
@@ -231,7 +238,16 @@ describe('sprawdzenie obecnosci', () => {
 
   it("Rozliczenia open",() => {
     cy.get('[href="/school/payments"] > .material-icons').click();
-    cy.wait(2000)
+    cy.wait(2000);
+    cy.get('[id="button-label"]').eq(3).click();
+    cy.get('[test_id="regularListRow"]').eq(0).click();
+    cy.get('[id="button-label"]').eq(4).click();
+    cy.wait(2000);
+    cy.get('[id="button-label"]').eq(3).click();
+    cy.wait(2000);
+    cy.get('[id="close"]').click();
+    
+
   })   
     describe('Raporty', () => {
       beforeEach(()=>{
@@ -242,7 +258,7 @@ describe('sprawdzenie obecnosci', () => {
       cy.get(':nth-child(2) > .navigation-cell').click();
       cy.wait(1000)
     })
-    describe('Raporty Obecności', () => {
+    
     it("Raport Obecność obecny/niobecny",() => {
       
       cy.get('#selector-groups > .section-selector > .selector-container').click();
@@ -254,22 +270,23 @@ describe('sprawdzenie obecnosci', () => {
       cy.get('#button-label').click();
       cy.wait(1000)
     })
-    it("Raport Obecność Godzinowy",() => {
+    // it("Raport Obecność Godzinowy",() => {
       
-      cy.get('.selector-container').eq(0).click();
-      cy.get('[test_id="rowDisplay"]').eq(0).click();
-      cy.get('.feature-view-side-content').click();
-      cy.get('#selector-groups > .section-selector > .selector-container').click();
-      cy.wait(1000)
-      cy.get('[id="checkbox-livkidowcy"]').click();
-      cy.get('[id="checkbox-Misie"]').click();
-      cy.get('.feature-view-side-content').click();
-      cy.get('[test_id="input"]').type(data.email);
-      cy.get('#button-label').click();
-      cy.wait(2000);
-      })
-
-    })
+    //   cy.get('.selector-container').eq(0).click();
+    //   cy.get('[test_id="rowDisplay"]').eq(0).click();
+    //   cy.get('.feature-view-side-content').click();
+    //   cy.wait(1000)
+    //   cy.get('#selector-groups > .section-selector > .selector-container').click();
+    //   cy.wait(1000)
+    //   cy.get('[id="checkbox-livkidowcy"]').click();
+    //   cy.get('[id="checkbox-Misie"]').click();
+    //   cy.get('.feature-view-side-content').click();
+    //   cy.get('[test_id="input"]').type(data.email);
+    //   cy.get('#button-label').click();
+    //   cy.wait(2000);
+    //   })
+      
+    
       it("Raporty Rachunki",() => {
         cy.get('.feature-view-side-navigation > :nth-child(2)').click();
         cy.wait(1000)
@@ -394,7 +411,13 @@ describe('sprawdzenie obecnosci', () => {
       })
     it("Faktury VAT open",() => {
       cy.get(':nth-child(4) > .navigation-cell').click();
-      cy.wait(2000)
+      // do poprawy
+      // cy.wait(2000)
+      // cy.get('[id="button-label"]').eq(1).click();
+      // cy.wait(1000)
+      // cy.get('[id="submit"]').eq(1).click();
+      // cy.wait(1000)
+      // cy.get('.popup-moda')
       cy.reload()
       cy.wait(1000)
       })
