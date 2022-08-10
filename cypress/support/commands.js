@@ -18,7 +18,13 @@ import 'cypress-file-upload';
 // -- This is a child command --
 // Cypress.Commands.add('drag', { prevSubject: 'element'}, (subject, options) => { ... })
 //
-//
+Cypress.Commands.add("openTshirtTab", ()=>{
+    cy.visit('http://automationpractice.com/index.php')
+    
+})
+
+
+
 // -- This is a dual command --
 // Cypress.Commands.add('dismiss', { prevSubject: 'optional'}, (subject, options) => { ... })
 //
