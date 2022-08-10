@@ -1,5 +1,7 @@
 /// <reference types="cypress" />
 
+import SelectPage from "../support/page-object/SelectPage";
+
 describe("E2E - Akcja wybrania opcji selekt", () => {
   it("Wybieranie opcji", () => {
       cy.visit("http://automationpractice.com/index.php?id_category=3&controller=category#/")
@@ -16,11 +18,11 @@ describe("E2E - Akcja wybrania opcji selekt", () => {
 
   it.only("Wybieranie wszystkich opcji", () => {
       cy.visit("http://automationpractice.com/index.php?id_category=3&controller=category#/")
-
-      cy.get("#selectProductSort").then(select => {
-          cy.wrap(select).find("option").each(opcja => {
-              cy.wrap(select).select(opcja.text())
-          })
-      })
+      SelectPage.selectAlloption();
+      // cy.get("#selectProductSort").then(select => {
+      //     cy.wrap(select).find("option").each(opcja => {
+      //         cy.wrap(select).select(opcja.text())
+      //     })
+      // })
   })
 })
