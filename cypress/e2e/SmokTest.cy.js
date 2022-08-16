@@ -21,8 +21,6 @@ describe('logowanie', () => {
   })
 })
 
-
-
 describe('sprawdzenie dziennika', () => {
   beforeEach(()=>{
     cy.viewport(1920, 1080) 
@@ -70,7 +68,7 @@ describe('sprawdzenie obecnosci', () => {
     cy.wait(1000);
     cy.get(':nth-child(3) > :nth-child(3) > .row-count > :nth-child(2)').click();
     cy.wait(1000);
-    cy.reload()
+    cy.reload() //musi byc inaczej nie zadziala wyslij email do cateringu
     cy.wait(1000);
     })
   // Do poprawy pierwsza godzine ogarnie gorzej potem
@@ -96,7 +94,6 @@ describe('sprawdzenie obecnosci', () => {
   })
 })
 
-
   describe('Kalendarzowy', () => {
     beforeEach(()=>{
       cy.viewport(1920, 1080) 
@@ -114,6 +111,20 @@ describe('sprawdzenie obecnosci', () => {
     cy.get(':nth-child(4) > .navigation-cell').click();
     cy.wait(1000)
     cy.reload()
+    cy.wait(1000)
+    })
+
+  it("Ogłoszenia utworz nowe",() => {
+    cy.get('#add-news').click();
+  //  cy.wait(1000)
+    cy.get('[class="section-selector"]').eq(0).type(data.title);
+    cy.get('.editor__content').type(data.text);
+    cy.get('#selector-groups > .section-selector').click();
+  //  cy.wait(1000)
+    cy.get('[id="checkbox-livkidowcy"]').click();
+    cy.get('[id="checkbox-Misie"]').click();
+    cy.get('.popup-slot').click();
+    cy.get('#save').click();
     cy.wait(1000)
     })
   })
@@ -240,6 +251,7 @@ describe('sprawdzenie obecnosci', () => {
     cy.get('[href="/school/payments"] > .material-icons').click();
     cy.wait(2000);
     cy.get('[id="button-label"]').eq(3).click();
+   
     cy.get('[test_id="regularListRow"]').eq(0).click();
     cy.get('[id="button-label"]').eq(4).click();
     cy.wait(2000);
@@ -520,7 +532,6 @@ describe('sprawdzenie obecnosci', () => {
       })
     }) 
 
-
     describe('Platnosci', () => {
       beforeEach(()=>{
         cy.viewport(1920, 1080) 
@@ -531,7 +542,6 @@ describe('sprawdzenie obecnosci', () => {
       })
     })
 
-
     describe('Posilki', () => {
       beforeEach(()=>{
         cy.viewport(1920, 1080) 
@@ -541,7 +551,6 @@ describe('sprawdzenie obecnosci', () => {
       cy.wait(2000)
       })
     }) 
-
 
     describe('Wiadomosci', () => {
       beforeEach(()=>{
@@ -556,7 +565,6 @@ describe('sprawdzenie obecnosci', () => {
     }) 
   }) 
 
-
   describe('Ustawienia', () => {
     beforeEach(()=>{
       cy.viewport(1920, 1080) 
@@ -568,7 +576,6 @@ describe('sprawdzenie obecnosci', () => {
     cy.wait(2000)
     })
 
-
     describe('Dzieci', () => {
       beforeEach(()=>{
         cy.viewport(1920, 1080) 
@@ -578,7 +585,6 @@ describe('sprawdzenie obecnosci', () => {
       cy.wait(2000)
       })
     }) 
-
 
     describe('Grupy', () => {
       beforeEach(()=>{
@@ -601,7 +607,6 @@ describe('sprawdzenie obecnosci', () => {
       })
     }) 
 
-
     describe('Placówka', () => {
       beforeEach(()=>{
         cy.viewport(1920, 1080) 
@@ -611,7 +616,6 @@ describe('sprawdzenie obecnosci', () => {
       cy.wait(2000)
       })
     }) 
-
 
     describe('Rekrutacja', () => {
       beforeEach(()=>{
@@ -623,7 +627,6 @@ describe('sprawdzenie obecnosci', () => {
       })
     }) 
 
-
     describe('Uprawnienia', () => {
       beforeEach(()=>{
         cy.viewport(1920, 1080) 
@@ -634,7 +637,6 @@ describe('sprawdzenie obecnosci', () => {
       })
     }) 
 
-
     describe('Kalendarz pracy', () => {
       beforeEach(()=>{
         cy.viewport(1920, 1080) 
@@ -644,7 +646,6 @@ describe('sprawdzenie obecnosci', () => {
       cy.wait(2000)
       })
     }) 
-
 
     describe('Panel Glowny parcy', () => {
       beforeEach(()=>{
@@ -659,7 +660,6 @@ describe('sprawdzenie obecnosci', () => {
     }) 
   }) 
 
-  
   // Do poprawy
 
   // describe('Konto', () => {
