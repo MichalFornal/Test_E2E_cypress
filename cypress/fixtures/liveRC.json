@@ -4,5 +4,7 @@
     "email": "michal.fornal+dyrektor12@livekid.com",
     "text": "TEST zxcvbnm,./asdfghjklqwertyuiopóśćń testtest 1234567890",
     "title": "ogłoszenie test auto",
-    "TeacherEmail": "michal.fornal+nauczyciel"
+    "teacheremail": "michal.fornal+nauczyciel1000@livekid.com",
+    "teachername": "Testautomatyczny",
+    "teachersurname": "Testauto"
 }

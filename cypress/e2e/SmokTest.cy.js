@@ -1,4 +1,4 @@
-import { get } from 'cypress/types/lodash'
+/// <reference types="cypress" />
 import  data  from '../fixtures/liveRC.json'
 
 Cypress.Cy.prototype.onUncaughtException = ()=>{}   
@@ -10,9 +10,9 @@ describe('logowanie', () => {
   //Stage
   //cy.visit('https://stage.app.livekid.pl/') 
   //RC
-  cy.visit('https://rc.app.livekid.pl/')
+  //cy.visit('https://rc.app.livekid.pl/')
   //Prod
-  //cy.visit('https://app.livekid.com/?lang=pl')
+  cy.visit('https://app.livekid.com/?lang=pl')
   })
   it('wpisz login', () => {
     cy.get('[data-cy="login"]').type(data.user)
@@ -283,21 +283,22 @@ describe('sprawdzenie obecnosci', () => {
       cy.get('#button-label').click();
       cy.wait(1000)
     })
-    it("Raport Obecność Godzinowy",() => {
+    //do poprawy
+    // it("Raport Obecność Godzinowy",() => {
       
-      cy.get('.selector-container').eq(0).click();
-      cy.get('[test_id="rowDisplay"]').eq(0).click();
-      cy.get('.feature-view-side-content').click();
-      cy.wait(1000)
-      cy.get('#selector-groups > .section-selector > .selector-container').click();
-      cy.wait(1000)
-      cy.get('[id="checkbox-livkidowcy"]').click();
-      cy.get('[id="checkbox-Misie"]').click();
-      cy.get('.feature-view-side-content').click();
-      cy.get('[test_id="input"]').type(data.email);
-      cy.get('#button-label').click();
-      cy.wait(2000);
-      })
+    //   cy.get('.selector-container').eq(0).click();
+    //   cy.get('[test_id="rowDisplay"]').eq(0).click();
+    //   cy.get('.feature-view-side-content').click();
+    //   cy.wait(1000)
+    //   cy.get('#selector-groups > .section-selector > .selector-container').click();
+    //   cy.wait(1000)
+    //   cy.get('[id="checkbox-livkidowcy"]').click();
+    //   cy.get('[id="checkbox-Misie"]').click();
+    //   cy.get('.feature-view-side-content').click();
+    //   cy.get('[test_id="input"]').type(data.email);
+    //   cy.get('#button-label').click();
+    //   cy.wait(2000);
+    //   })
       
     
       it("Raporty Rachunki",() => {
@@ -605,6 +606,25 @@ describe('sprawdzenie obecnosci', () => {
     it("Nauczyciele open",() => {
       cy.get(':nth-child(4) > .navigation-cell').click();
       cy.wait(1000)
+    })
+    it("Dodanie nauczyciela",() => {
+      cy.get(':nth-child(3) > #selector-default > button').click();
+      cy.get('[id="selector-groups"]').click();
+      cy.get('[id="checkbox-livkidowcy"]').click();
+      cy.get('[id="checkbox-Misie"]').click();
+      cy.get('.filter-click-area').click();
+      cy.get('[test_id="input"]').eq(0).type(data.teachername);
+      cy.get('#selector-default > .section-selector > .selector-container').click();
+      cy.get('.body-row').eq(1).click()
+      cy.get('[test_id="input"]').eq(1).type(data.teachersurname);
+      cy.get('[test_id="input"]').eq(2).type(data.teacheremail);
+      cy.get("#submit").click();
+      cy.wait(2000);
+      // cy.get('[test_id="regularListMenu""]').eq(10)
+      // cy.get('.menu-row').eq(1).click()
+      
+    })
+    it("Zmiana uprawnien w widoku nauczyciela",() => {
       cy.get(':nth-child(1) > .regular-list-row > :nth-child(3) > .list-selector > .selector-container').click();
       cy.get('.body-row').eq(1).click();
       cy.wait(1000);
@@ -613,8 +633,11 @@ describe('sprawdzenie obecnosci', () => {
       cy.get('.body-row').eq(0).click();
       cy.wait(2000)
       })
-    }) 
+    //Trzeba to dodac
+    // it("usuniecie nauczyciela")() => {
 
+    // })   
+     }) 
     describe('Placówka', () => {
       beforeEach(()=>{
         cy.viewport(1920, 1080) 
