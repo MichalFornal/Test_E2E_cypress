@@ -10,9 +10,9 @@ describe('logowanie', () => {
   //Stage
   //cy.visit('https://stage.app.livekid.pl/') 
   //RC
-  //cy.visit('https://rc.app.livekid.pl/')
+  cy.visit('https://rc.app.livekid.pl/')
   //Prod
-  cy.visit('https://app.livekid.com/?lang=pl')
+  //cy.visit('https://app.livekid.com/?lang=pl')
   })
   it('wpisz login', () => {
     cy.get('[data-cy="login"]').type(data.user)
@@ -239,7 +239,18 @@ describe('sprawdzenie obecnosci', () => {
     })
   it("Wiadomosci open",() => {
     cy.get('[href="/school/chat"] > .material-icons').click();
-    cy.wait(2000)
+    
+    })
+  it("Wiadomosci change user",() => {
+    cy.get('.chat-row').eq(2).click();
+    cy.wait(1000)
+    cy.get('.chat-row').eq(0).click();
+    
+    })
+  it("Wiadomosci send text",() => {
+    cy.get('[placeholder="Wpisz tutaj..."]').type(data.text);
+    cy.get('.input-confirm').click();
+    cy.wait(1000)
     })
   }) 
   describe('Rozliczenia', () => {
