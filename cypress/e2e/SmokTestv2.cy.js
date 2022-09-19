@@ -1,10 +1,8 @@
 /// <reference types="cypress" />
 import  data  from '../fixtures/liveRC.json'
-Cypress.on('uncaught:exception', (err, runnable) => {
-  // returning false here prevents Cypress from
-  // failing the test
-  return false
-})
+import Dziennik from "../support/page-object/Dziennik";
+
+
 Cypress.Cy.prototype.onUncaughtException = ()=>{}   
 describe('logowanie', () => {
   beforeEach(()=>{
@@ -53,9 +51,9 @@ describe('sprawdzenie obecnosci', () => {
     elem.trigger('click')
     })
   })
-  it("Trzy kropki",() => {
-    cy.get(':nth-child(1) > .regular-list-actions > .more-icon > .material-icons').click();
-    cy.wait(1000)
+  it("Trzykropki",() => {
+    Dziennik.Trzykropki();
+    cy.wait(10000)
     })
   it("Powiadomienia",() => {
     cy.get(':nth-child(1) > :nth-child(5) > .list-selector-container > .selector-display').click();
@@ -71,8 +69,8 @@ describe('sprawdzenie obecnosci', () => {
     cy.get(':nth-child(1) > :nth-child(2) > .row-count > :nth-child(2)').click();
     cy.get(':nth-child(2) > :nth-child(2) > .row-count > :nth-child(2)').click();
     cy.wait(1000);
-    // cy.get(':nth-child(3) > :nth-child(3) > .row-count > :nth-child(2)').click();
-    // cy.wait(1000);
+    cy.get(':nth-child(3) > :nth-child(3) > .row-count > :nth-child(2)').click();
+    cy.wait(1000);
     cy.reload() //musi byc inaczej nie zadziala wyslij email do cateringu
     //cy.wait(1000);
     })
