@@ -13,9 +13,9 @@ describe('logowanie', () => {
   })
   it('Home page login', () => {
   //Stage
-  cy.visit('https://stage.app.livekid.pl/') 
+  //cy.visit('https://stage.app.livekid.pl/') 
   //RC
-  //cy.visit('https://rc.app.livekid.pl/')
+  cy.visit('https://rc.app.livekid.pl/')
   //Prod
   //cy.visit('https://app.livekid.com/?lang=pl')
   })
@@ -32,6 +32,8 @@ describe('Logowanie', () => {
   })
   it("Login",() => {
     cy.get('[data-cy="loginButton"]').click();
+    cy.get('.user-roles > :nth-child(1)').click();
+    cy.wait(1000);
   })
 
 })
@@ -80,6 +82,12 @@ it("Ustawienia open",() => {
   it("Wystaw rozliczenie",() => {
     cy.get('[id="button-label"]').eq(4).click();
     cy.wait(1000);
+    cy.get(':nth-child(2) > .filter-wrap > [test_id=""] > #selector-default > .navigation-filter > .filter-selector').click();
+    cy.wait(1000);
+    cy.get('.filter-row > #checkbox-default > .material-icons').click();
+    cy.wait(1000);
+    cy.get('.filter-click-area').click();
+    cy.wait(1000);
     cy.get('[id="checkbox-default"]').eq(1).click();
     cy.wait(1000);
     cy.get('.flex-row').eq(0).click();
@@ -87,7 +95,7 @@ it("Ustawienia open",() => {
     cy.wait(1000);
     cy.get('.back-button').click();
   }) 
-  it("Wystawione rachunki",() => {
+  it("Generuj Fakture VAT",() => {
     cy.wait(1000);
     cy.get('[id="button-label"]').eq(3).click();
     cy.wait(1000);
@@ -95,14 +103,20 @@ it("Ustawienia open",() => {
     cy.wait(1000);
     cy.get('[id="button-label"]').eq(4).click();
     cy.wait(1000);
+  })
+  it("Wystaw Fakture",() => {
     cy.get('[id="[object Object]"]').eq(0).click();
     cy.wait(1000);
     cy.get('[id="section-list-action-settleBalance"]').click();
-    cy.wait(2000);
+    cy.wait(1000);
+  }) 
+  it("Pobierz Fakture",() => {
     cy.get('[id="button-label"]').eq(4).click();
-    cy.wait(1000);
-    cy.get('[id="button-label"]').eq(3).click();
-    cy.wait(1000);
+    cy.wait(3000);
+    cy.get('[id="button-label"]').eq(3).click(); 
+  }) 
+  it("Pobierz rozliczenie",() => {
+    cy.wait(3000);
     cy.get('[id="close"]').click();
     cy.reload()
     cy.wait(1000);
