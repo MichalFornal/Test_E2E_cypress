@@ -15,9 +15,9 @@ describe('logowanie', () => {
   //Stage
   //cy.visit('https://stage.app.livekid.pl/') 
   //RC
-  cy.visit('https://rc.app.livekid.pl/')
+  //cy.visit('https://rc.app.livekid.pl/')
   //Prod
-  //cy.visit('https://app.livekid.com/?lang=pl')
+  cy.visit('https://app.livekid.com/?lang=pl')
   })
   it('wpisz login', () => {
     cy.get('[data-cy="login"]').type(data.user)
@@ -93,6 +93,9 @@ it("Ustawienia open",() => {
     cy.get('.flex-row').eq(0).click();
     cy.get('#submitBill').click();
     cy.wait(1000);
+    // breadcapms
+    //cy.get('.breadcrumbs-route').eq(0).click();
+    //stara wersja
     cy.get('.back-button').click();
   }) 
   it("Generuj Fakture VAT",() => {
@@ -119,7 +122,7 @@ it("Ustawienia open",() => {
     cy.wait(3000);
     cy.get('[id="close"]').click();
     cy.reload()
-    cy.wait(1000);
+    cy.wait(2000);
   
   })  
 })  
@@ -128,6 +131,7 @@ it("Ustawienia open",() => {
       cy.viewport(1920, 1080) 
     })  
 it("Ustawienia open",() => {
+  cy.wait(2000);
   cy.get('[href="/school/settings"] > .material-icons').click();
   })
 

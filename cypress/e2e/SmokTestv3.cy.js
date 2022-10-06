@@ -59,8 +59,8 @@ describe('sprawdzenie obecnosci', () => {
     })
   it("Powiadomienia",() => {
     //stara wersja
-    cy.get(':nth-child(1) > :nth-child(5) > .list-selector-container > .selector-display').click();
-    //cy.get(':nth-child(1) > :nth-child(6) > .list-selector-container > .selector-display').click();
+    //cy.get(':nth-child(1) > :nth-child(5) > .list-selector-container > .selector-display').click();
+    cy.get(':nth-child(1) > :nth-child(6) > .list-selector-container > .selector-display').click();
     cy.get('#toggleCreator').click();
     cy.get(':nth-child(6) > :nth-child(4) > #checkbox-default').click();
     cy.get(':nth-child(5) > :nth-child(4) > #checkbox-default').click();
@@ -70,8 +70,8 @@ describe('sprawdzenie obecnosci', () => {
     })
   it("Posiłki",() => {
     //stara wersja
-    cy.get(':nth-child(10) > :nth-child(4) > .list-selector-container > .selector-display').click();
-    //cy.get(':nth-child(10) > :nth-child(5) > .list-selector-container > .selector-display').click();
+    // cy.get(':nth-child(10) > :nth-child(4) > .list-selector-container > .selector-display').click();
+    cy.get(':nth-child(10) > :nth-child(5) > .list-selector-container > .selector-display').click();
     cy.get(':nth-child(1) > :nth-child(2) > .row-count > :nth-child(2)').click();
     cy.get(':nth-child(2) > :nth-child(2) > .row-count > :nth-child(2)').click();
     cy.wait(1000);
@@ -96,8 +96,8 @@ describe('sprawdzenie obecnosci', () => {
     cy.get('[id="button-label"]').eq(2).click();
     cy.wait(1000);
     //stare
-    cy.get('.list-header > #checkbox-default').click();
-    //cy.get('.popup-slot > .regular-list > .list-header > #checkbox-default').click();
+    //cy.get('.list-header > #checkbox-default').click();
+    cy.get('.popup-slot > .regular-list > .list-header > #checkbox-default').click();
     cy.wait(1000);
     cy.get('[id="submit"]').click();
     cy.wait(1000);
