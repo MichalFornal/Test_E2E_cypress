@@ -17,7 +17,7 @@ describe('logowanie', () => {
   //RC
   //cy.visit('https://rc.app.livekid.pl/')
   //Prod
-  cy.visit('https://app.livekid.com/?lang=pl')
+  //cy.visit('https://app.livekid.com/?lang=pl')
   })
   it('wpisz login', () => {
     cy.get('[data-cy="login"]').type(data.user)
@@ -94,9 +94,9 @@ it("Ustawienia open",() => {
     cy.get('#submitBill').click();
     cy.wait(1000);
     // breadcapms
-    //cy.get('.breadcrumbs-route').eq(0).click();
+    cy.get('.breadcrumbs-route').eq(0).click();
     //stara wersja
-    cy.get('.back-button').click();
+    //cy.get('.back-button').click();
   }) 
   it("Generuj Fakture VAT",() => {
     cy.wait(1000);
