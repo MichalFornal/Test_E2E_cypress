@@ -14,9 +14,9 @@ describe('logowanie', () => {
   //Stage
   //cy.visit('https://stage.app.livekid.pl/') 
   //RC
-  cy.visit('https://rc.app.livekid.pl/')
+  //cy.visit('https://rc.app.livekid.pl/')
   //Prod
-  //cy.visit('https://app.livekid.com/?lang=pl')
+  cy.visit('https://app.livekid.com/?lang=pl')
   })
   it('wpisz login', () => {
     cy.get('[data-cy="login"]').type(data.user)
@@ -48,6 +48,7 @@ describe('sprawdzenie obecnosci', () => {
     // cy.get('#datepicker-button').click();
     // cy.get('#calendar-cell-8').click();
     // cy.get('#datepicker-submit').click();
+    //20.10
     cy.wait(1000);
     cy.get('.list-content>div>span>div').find("#checkbox-default").each((elem)=>{
     elem.trigger('click')
@@ -55,18 +56,16 @@ describe('sprawdzenie obecnosci', () => {
   })
   it("Trzy kropki",() => {
     cy.get(':nth-child(1) > .regular-list-actions > .more-icon > .material-icons').click();
-    cy.wait(1000)
+    //cy.wait(1000)
     })
   it("Powiadomienia",() => {
-    //stara wersja
     cy.get(':nth-child(1) > :nth-child(5) > .list-selector-container > .selector-display').click();
-    //cy.get(':nth-child(1) > :nth-child(6) > .list-selector-container > .selector-display').click();
     cy.get('#toggleCreator').click();
     cy.get(':nth-child(6) > :nth-child(4) > #checkbox-default').click();
     cy.get(':nth-child(5) > :nth-child(4) > #checkbox-default').click();
     cy.get(':nth-child(4) > :nth-child(4) > #checkbox-default').click();
     cy.get('#addNote').click();
-    cy.wait(1000);
+    //cy.wait(1000);
     })
   it("Posiłki",() => {
     //stara wersja
@@ -96,11 +95,11 @@ describe('sprawdzenie obecnosci', () => {
     cy.get('[id="button-label"]').eq(2).click();
     cy.wait(1000);
     //stare
-    cy.get('.list-header > #checkbox-default').click();
-    //cy.get('.popup-slot > .regular-list > .list-header > #checkbox-default').click();
+    //cy.get('.list-header > #checkbox-default').click();
+    cy.get('.popup-slot > .regular-list > .list-header > #checkbox-default').click();
     cy.wait(1000);
     cy.get('[id="submit"]').click();
-    cy.wait(1000);
+    cy.wait(2000);
     cy.get('.popup-content-header > .material-icons').click();
   })
 })
@@ -439,7 +438,7 @@ describe('sprawdzenie obecnosci', () => {
         cy.viewport(1920, 1080) 
       })
     it("Wpłaty open",() => {
-      cy.get(':nth-child(3) > .navigation-cell').click();
+      //cy.get(':nth-child(3) > .navigation-cell').click();
       cy.wait(2000)
       })
     }) 
@@ -448,7 +447,8 @@ describe('sprawdzenie obecnosci', () => {
         cy.viewport(1920, 1080) 
       })
     it("Faktury VAT open",() => {
-      cy.get(':nth-child(4) > .navigation-cell').click();
+      cy.get(':nth-child(3) > .navigation-cell').click();
+      //cy.get(':nth-child(4) > .navigation-cell').click();
       // do poprawy
       // cy.wait(2000)
       // cy.get('[id="button-label"]').eq(1).click();
