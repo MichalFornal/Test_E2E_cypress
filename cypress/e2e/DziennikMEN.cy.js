@@ -33,7 +33,7 @@ describe('Logowanie', () => {
   it("Login",() => {
     cy.get('[data-cy="loginButton"]').click();
     //jak masz admina lub wiecej rol to on
-    //cy.get('.user-roles > :nth-child(1)').click();
+    cy.get('.user-roles > :nth-child(1)').click();
     cy.wait(1000);
   })
 

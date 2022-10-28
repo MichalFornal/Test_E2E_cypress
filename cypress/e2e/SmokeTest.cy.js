@@ -14,9 +14,9 @@ describe('logowanie', () => {
   //Stage
   //cy.visit('https://stage.app.livekid.pl/') 
   //RC
-  //cy.visit('https://rc.app.livekid.pl/')
+  cy.visit('https://rc.app.livekid.pl/')
   //Prod
-  cy.visit('https://app.livekid.com/?lang=pl')
+  //cy.visit('https://app.livekid.com/?lang=pl')
   })
   it('wpisz login', () => {
     cy.get('[data-cy="login"]').type(data.user)
@@ -32,6 +32,7 @@ describe('sprawdzenie dziennika', () => {
   })
   it("Przeklikaj caly dziennik",() => {
     cy.get('[data-cy="loginButton"]').click();
+    //gdy nie mamy wiecej rol to off ta linijke
     cy.get('.user-roles > :nth-child(1)').click();
     cy.wait(1000);
     cy.get('[id="button-label"]').click();
@@ -46,10 +47,9 @@ describe('sprawdzenie obecnosci', () => {
   it("Zmien date kalendarza",() => {
     //pierwsze 3 linijki zakomentuj jesli chcesz miec dzisiejszy dzien w dzienniku
     // cy.get('#datepicker-button').click();
-    // cy.get('#calendar-cell-8').click();
+    // cy.get('#calendar-cell-30').click();
     // cy.get('#datepicker-submit').click();
-    //20.10
-    cy.wait(1000);
+    cy.wait(2000);
     cy.get('.list-content>div>span>div').find("#checkbox-default").each((elem)=>{
     elem.trigger('click')
     })

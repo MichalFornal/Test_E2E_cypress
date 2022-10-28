@@ -15,7 +15,7 @@ describe('logowanie', () => {
   //Stage
   //cy.visit('https://stage.app.livekid.pl/') 
   //RC
-  //cy.visit('https://rc.app.livekid.pl/')
+  cy.visit('https://rc.app.livekid.pl/')
   //Prod
   //cy.visit('https://app.livekid.com/?lang=pl')
   })
@@ -56,7 +56,7 @@ it("Ustawienia open",() => {
     cy.get('#add-kid').click();
     cy.get(':nth-child(1) > .row-input > .section-selector > input').type(data.ChildName);
     cy.get(':nth-child(2) > .row-input > .section-selector > input').type(data.ChildSurname);
-    cy.get('[test_id="kidGroup"]').eq(13).click();
+    cy.get(':nth-child(5) > .row-input > [data-v-cfeab80a=""] > #selector-default > .section-selector > .selector-container').click();
     cy.get('.body-row').eq(2).click();
     cy.get(':nth-child(3) > .row-input > [data-v-cfeab80a=""] > #selector-default > .section-selector > .selector-container').click();
     cy.get(':nth-child(4) > .row-display').click();

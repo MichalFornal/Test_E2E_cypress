@@ -13,9 +13,9 @@ describe('SignUp', () => {
   })
   it('Home page', () => {
   //Stage
-  cy.visit('https://stage.app.livekid.pl/') 
+  //cy.visit('https://stage.app.livekid.pl/') 
   //RC
-  //cy.visit('https://rc.app.livekid.pl/')
+  cy.visit('https://rc.app.livekid.pl/')
   //Prod
   //cy.visit('https://app.livekid.com/?lang=pl')
   })
