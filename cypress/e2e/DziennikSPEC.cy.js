@@ -13,9 +13,9 @@ describe('logowanie', () => {
   })
   it('Home page login', () => {
     //Stage
-    cy.visit('https://stage.app.livekid.pl/') 
+    //cy.visit('https://stage.app.livekid.pl/') 
     //RC
-    //cy.visit('https://rc.app.livekid.pl/')
+    cy.visit('https://rc.app.livekid.pl/')
     //Prod
     //cy.visit('https://app.livekid.com/?lang=pl')
     })
@@ -33,7 +33,7 @@ describe('logowanie', () => {
     it("Login",() => {
       cy.get('[data-cy="loginButton"]').click();
       //jak masz admina lub wiecej rol to on
-      //cy.get('.user-roles > :nth-child(1)').click();
+      cy.get('.user-roles > :nth-child(1)').click();
       cy.wait(1000);
     })
   
