@@ -1,10 +1,10 @@
 {
     "user": "michal.fornal+dyrektor12@livekid.com",
-    "pass": "Test1234",
+    "pass": "Test12345",
     "email": "michal.fornal+dyrektor12@livekid.com",
     "text": "TEST zxcvbnm,./asdfghjklqwertyuiopóśćń testtest 1234567890",
     "title": "ogłoszenie test auto",
-    "teacheremail": "michal.fornal+nauczyciel100.10@livekid.com",
+    "teacheremail": "michal.fornal+nauczyciel107.11@livekid.com",
     "teachername": "Testautomatyczny",
     "teachersurname": "Testauto",
     "directorname": "Michal",
@@ -13,7 +13,18 @@
     "directoremail": "michal.fornal+dyrektor123456@livekid.com",
     "ChildName": "ChildName",
     "ChildSurname": "ChildSurname",
-    "NamedziennikSpec": "Test19"
-
-
+    "NamedziennikSpec": "Test19",
+    "Parentemail": "michal.fornal+rodzic22@livekid.com",
+    "Parentpass": "Test12345",
+    "support": "office+mfornal@livekid.com",
+    "pass_support":"Test1234",
+    "PL0_ID": "15309576",
+    "PL1_ID": "15039943",
+    "PL2_ID": "16661891",
+    "PL3_ID": "20799729",
+    "PL4_ID": "18322765",
+    "PL5_ID": "20432794",
+    "PL6_ID": "19257914",
+    "PL7_ID": "15253184",
+    "PL8_ID": "18827967"
 }

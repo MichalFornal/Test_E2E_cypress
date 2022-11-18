@@ -14,9 +14,9 @@ describe('logowanie', () => {
   //Stage
   //cy.visit('https://stage.app.livekid.pl/') 
   //RC
-  cy.visit('https://rc.app.livekid.pl/')
+  //cy.visit('https://rc.app.livekid.pl/')
   //Prod
-  //cy.visit('https://app.livekid.com/?lang=pl')
+  cy.visit('https://app.livekid.com/?lang=pl')
   })
   it('wpisz login', () => {
     cy.get('[data-cy="login"]').type(data.user)
@@ -438,7 +438,7 @@ describe('sprawdzenie obecnosci', () => {
         cy.viewport(1920, 1080) 
       })
     it("Wpłaty open",() => {
-      //cy.get(':nth-child(3) > .navigation-cell').click();
+      cy.get(':nth-child(3) > .navigation-cell').click();
       cy.wait(2000)
       })
     }) 
@@ -447,7 +447,7 @@ describe('sprawdzenie obecnosci', () => {
         cy.viewport(1920, 1080) 
       })
     it("Faktury VAT open",() => {
-      cy.get(':nth-child(3) > .navigation-cell').click();
+      cy.get(':nth-child(4) > .navigation-cell').click();
       //cy.get(':nth-child(4) > .navigation-cell').click();
       // do poprawy
       // cy.wait(2000)
