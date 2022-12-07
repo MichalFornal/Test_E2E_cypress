@@ -16,7 +16,7 @@
     "NamedziennikSpec": "Test19",
     "Parentemail": "michal.fornal+rodzic22@livekid.com",
     "Parentpass": "Test12345",
-    "support": "office+mfornal@livekid.com",
+    "support": "michal.fornal+support@livekid.com",
     "pass_support":"Test1234",
     "PL0_ID": "15309576",
     "PL1_ID": "15039943",
@@ -26,5 +26,6 @@
     "PL5_ID": "20432794",
     "PL6_ID": "19257914",
     "PL7_ID": "15253184",
-    "PL8_ID": "18827967"
+    "PL8_ID": "18827967",
+    "PL9_ID": "18674154"
 }

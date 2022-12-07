@@ -224,4 +224,25 @@ describe('Wyszukaj placówki', () => {
       cy.wait(1000);
     })   
   })
+  describe('Subregion PL9', () => {
+    it("Subregion PL9 open",() => {
+      cy.get('.user-role-icon').eq(9).click();
+      cy.wait(1000);
+    })
+    it("wpisz id placówki",() => {
+      cy.get('[placeholder="Search..."]').type(data.PL9_ID)
+      cy.wait(1000);
+    })
+    it("kliknij na placówkę",() => {
+      cy.get('.grid-content').click();
+      cy.wait(1000);
+    })
+    it("wygeneruj kod placówki",() => {
+      cy.get('.icon-button').eq(0).click()
+    })
+    it("Wyjdz z dodania konta",() => {
+      cy.get('.popup-content-header > .material-icons').click()
+      cy.wait(1000);
+    })   
+  })
 })
